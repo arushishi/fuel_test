@@ -96,10 +96,10 @@ class Controller_Form extends Controller_Public
 		$post['user_agent'] = Input::user_agent();
 		unset($post['submit']);   // postデータに「submit」があるが、そのままだとエラーになるため削除している
 		// データベースへ保存
-		$model_form = Model_Form::forge()->set($post);
-		list($id, $rows) = $model_form->save();
+		$model_form = Model_Form::forge($post);
+		$ret = $model_form->save();
 
-		if ($rows != 1)
+		if (!$ret)
 		{
 			Log::error('データベース保存エラー', __METHOD__);
 
