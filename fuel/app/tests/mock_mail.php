@@ -12,7 +12,6 @@ namespace Email;
 
 function mail($to, $subject, $message, $additional_headers, $additional_parameters)
 {
-	// Log出力して終了
 	\Log::debug(
 		'to:' . $to . ' ' .
 		'subject:' . $subject . ' ' .
@@ -20,6 +19,15 @@ function mail($to, $subject, $message, $additional_headers, $additional_paramete
 		'additional_headers:' . $additional_headers . ' ' .
 		'additional_parameters:' . $additional_parameters
 	);
+	$data = array(
+		'to' => $to,
+		'subject' => $subject,
+		'message' => $message,
+		'additional_headers' => $additional_headers,
+		'additional_parameters' => $additional_parameters,
+	);
+
+	\Config::set('_tests.mail.data', $data);
 
 	return true;
 }
