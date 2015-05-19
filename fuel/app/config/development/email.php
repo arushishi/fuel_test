@@ -42,7 +42,8 @@ return array(
 		/**
 		 * Mail driver (mail, smtp, sendmail, noop)
 		 */
-		'driver' => 'noop',
+//		'driver' => 'noop',
+		'driver' => 'smtp',
 		/**
 		 * Whether to send as html, set to null for autodetection.
 		 */
@@ -99,17 +100,22 @@ return array(
 		 * SMTP settings
 		 */
 		'smtp' => array(
-			'host' => '',
-			'port' => 25,
-			'username' => '',
-			'password' => '',
+//			'host' => '',
+//			'port' => 25,
+//			'username' => '',
+//			'password' => '',
+			'host' => 'ssl://smtp.gmail.com',
+			'port' => 465,
+			'username' => 'lec.katata@gmail.com',
+			'password' => 'katata718',
 			'timeout' => 5,
 			'starttls' => false,
 		),
 		/**
 		 * Newline
 		 */
-		'newline' => "\n",
+//		'newline' => "\n",
+		'newline' => "\r\n",
 		/**
 		 * Attachment paths
 		 */

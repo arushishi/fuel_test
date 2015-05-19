@@ -8,7 +8,8 @@
 
 /**
  * MyInputFilters class Tests
- *
+ * 
+ * @backupGlobals disabled
  * @group App
  */
 class myinputfilters_Test extends TestCase
